@@ -1,0 +1,25 @@
+# Secrets — never commit these
+.env
+
+# Chrome login session — contains your Google account cookies
+chrome-profile/
+
+# Generated output files
+transcripts/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
