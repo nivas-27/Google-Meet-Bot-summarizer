@@ -34,6 +34,16 @@ import datetime
 import signal
 import subprocess
 from send_summary_mail import send_summary_email
+
+# Start virtual display for headless EC2
+import subprocess
+subprocess.Popen(['Xvfb', ':99', '-screen', '0', '1920x1080x24'])
+import os
+os.environ['DISPLAY'] = ':99'
+import time
+time.sleep(1)  # give Xvfb a moment to start
+
+
 from dotenv import load_dotenv
 
 load_dotenv()
