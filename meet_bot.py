@@ -35,15 +35,6 @@ import signal
 import subprocess
 from send_summary_mail import send_summary_email
 
-# Start virtual display for headless EC2
-import subprocess
-subprocess.Popen(['Xvfb', ':99', '-screen', '0', '1920x1080x24'])
-import os
-os.environ['DISPLAY'] = ':99'
-import time
-time.sleep(1)  # give Xvfb a moment to start
-
-
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -365,9 +356,9 @@ class JoinGoogleMeet:
         print("Looking for join button...")
         time.sleep(2)
         strategies = [
-            (By.XPATH, '//button[.//span[contains(text(),"Join now") or contains(text(),"Ask to join") or text()="Join"]]'),
-            (By.XPATH, '//span[text()="Join now" or text()="Ask to join"]'),
-            (By.XPATH, '//*[@role="button" and (contains(.,"Join now") or contains(.,"Ask to join"))]'),
+            (By.XPATH, '//button[.//span[contains(text(),"Join now") or contains(text(),"Ask to join") or contains(text(),"Join anyway") or text()="Join"]]'),
+            (By.XPATH, '//span[text()="Join now" or text()="Ask to join" or text()="Join anyway"]'),
+            (By.XPATH, '//*[@role="button" and (contains(.,"Join now") or contains(.,"Ask to join") or contains(.,"Join anyway"))]'),
             (By.CSS_SELECTOR, 'button[jsname="Qx7uuf"]'),
         ]
         clicked_label = None

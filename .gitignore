@@ -3,6 +3,7 @@
 
 # Chrome login session — contains your Google account cookies
 chrome-profile/
+chrome-profile-*/
 
 # Generated output files
 transcripts/
@@ -19,6 +20,7 @@ build/
 .venv/
 venv/
 env/
+.env.*
 
 # OS
 .DS_Store
